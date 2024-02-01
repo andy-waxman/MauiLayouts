@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiLayouts.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <FlexLayout Direction="Column" JustifyContent="Start">
+        <BoxView FlexLayout.Basis="5%" Color="Yellow" />
+        <FlexLayout
+            AlignContent="Center"
+            FlexLayout.Basis="85%"
+            FlexLayout.Grow="1"
+            JustifyContent="Center">
+            <FlexLayout
+                AlignItems="Stretch"
+                Direction="Column"
+                FlexLayout.Basis="80%"
+                JustifyContent="Start">
+                <VerticalStackLayout
+                    Margin="0,5"
+                    FlexLayout.AlignSelf="Center"
+                    FlexLayout.Order="0"
+                    Spacing="0">
+                    <Image
+                        Margin="0"
+                        Source="dotnet_bot.png"
+                        WidthRequest="200" />
+                    <Label
+                        Margin="0,-15,0,0"
+                        HorizontalOptions="Center"
+                        Text="Application Name"
+                        VerticalOptions="Center" />
+                    <VerticalStackLayout
+                        Margin="25"
+                        HorizontalOptions="Center"
+                        Spacing="5">
+                        <Label HorizontalOptions="Center" Text="Department" />
+                        <Label HorizontalOptions="Center" Text="Jurisdiction" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+                <VerticalStackLayout
+                    Margin="5"
+                    FlexLayout.Order="1"
+                    Spacing="5">
+                    <VerticalStackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+                        <Label Text="Username" />
+                        <Border x:Name="Border_UserName">
+                            <Entry
+                                x:Name="Entry_UserName"
+                                Margin="0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand" />
+                        </Border>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+                        <Label Text="Password" />
+                        <Border x:Name="Border_Password">
+                            <StackLayout
+                                Margin="0"
+                                Orientation="Horizontal"
+                                Spacing="0"
+                                VerticalOptions="FillAndExpand">
+                                <Entry
+                                    x:Name="Entry_Password"
+                                    Margin="0"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand" />
+                            </StackLayout>
+                        </Border>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+                <Button
+                    Margin="5,0"
+                    FlexLayout.Order="2"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Nested" />
+                <StackLayout
+                    Margin="5"
+                    FlexLayout.Order="3"
+                    Orientation="Horizontal"
+                    Spacing="6">
+                    <Button
+                        HorizontalOptions="FillAndExpand"
+                        SemanticProperties.Hint="Use FaceID to login with last used credentials"
+                        Text="Face ID" />
+                    <Button
+                        HorizontalOptions="FillAndExpand"
+                        SemanticProperties.Hint="Use Touch ID to login with last used credentials"
+                        Text="Touch ID" />
+                </StackLayout>
+                <Image
+                    Margin="0,20,0,0"
+                    Aspect="{OnPlatform Default='Center',
+                                        WinUI='AspectFit'}"
+                    FlexLayout.AlignSelf="Center"
+                    FlexLayout.Order="4"
+                    Source="dotnet_bot.png"
+                    WidthRequest="200" />
+            </FlexLayout>
+            <BoxView FlexLayout.Basis="{OnIdiom Default='25%', Phone='10%'}" Color="Green" />
+            <BoxView FlexLayout.Basis="{OnIdiom Default='25%', Phone='10%'}" Color="GreenYellow" />
+        </FlexLayout>
+    </FlexLayout>
+</ContentPage>
